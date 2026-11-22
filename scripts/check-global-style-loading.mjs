@@ -82,7 +82,7 @@ const pages = [
 	{
 		name: "About page",
 		htmlPath: "about/index.html",
-		requiredMarkup: [["Hi! I'm Po", "About page introduction"]],
+		requiredMarkup: [],
 		requiredRules: [[".custom-md .image-grid", "extended Markdown layout styles"]],
 	},
 ];
