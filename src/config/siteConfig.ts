@@ -1,4 +1,5 @@
 import type { SiteConfig } from "../types/config";
+import { profileConfig } from "./profileConfig";
 
 // 定义站点语言
 const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
@@ -36,8 +37,7 @@ export const siteConfig: SiteConfig = {
 		mode: "text-icon",
 		// 顶栏标题文本
 		text: "Po",
-		// 顶栏标题图标路径，默认使用 public/assets/po/mark.png
-		icon: "assets/po/mark.png",
+		icon: profileConfig.avatar,
 		// 网站Logo图片路径
 		logo: "assets/po/mark.png",
 	},
@@ -50,7 +50,7 @@ export const siteConfig: SiteConfig = {
 
 	font: {
 		// custom 保持 ZenMaruGothic -> Loli -> 系统字体的显示顺序；system 不加载任何自定义字体
-		mode: "system",
+		mode: "custom",
 	},
 
 	bangumi: {
@@ -120,7 +120,7 @@ export const siteConfig: SiteConfig = {
 	},
 
 	banner: {
-		src: "/assets/po/banner.webp",
+		src: "/assets/po/skyline.png",
 
 		position: "center", // 等同于 object-position，仅支持 'top', 'center', 'bottom'。默认为 'center'
 
@@ -131,10 +131,10 @@ export const siteConfig: SiteConfig = {
 		},
 
 		waves: {
-			enable: false,
+			enable: true,
 			performanceMode: false,
-			mobileDisable: true,
-			switchable: false,
+			mobileDisable: false,
+			switchable: true,
 		},
 
 		// PicFlow API支持(智能图片API)
