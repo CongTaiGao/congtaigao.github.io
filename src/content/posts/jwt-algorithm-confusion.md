@@ -11,6 +11,8 @@ lang: en
 
 The application issued an RS256-signed session JWT with a low-privilege role. It also published the corresponding RSA public key. The verifier trusted the algorithm named in the JWT header, so changing the header to HS256 caused the same public key to be treated as an HMAC secret. The forged token was accepted with an elevated role.
 
+![JWT algorithm confusion flow showing an RSA public key misused as an HMAC secret.](/assets/writeups/jwt-algorithm-confusion.svg)
+
 ## Reconnaissance
 
 The challenge portal provided a short-lived team session exchange and a public register containing a JWKS endpoint and a PEM representation of the RSA public key. A valid session opened the application as a medium-privilege user. The transcript endpoint returned a restricted response for that role and indicated that a higher role was required.

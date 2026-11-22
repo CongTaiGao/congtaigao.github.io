@@ -11,6 +11,8 @@ lang: en
 
 The reverse proxy cached responses by request path and session cookie, but omitted `X-Forwarded-Host` from its cache key. The application still used that header when creating the page's canonical URL. A request could therefore place attacker-controlled canonical metadata in a shared cache entry.
 
+![Cache poisoning flow: an unkeyed header changes shared cached metadata.](/assets/writeups/cache-poisoning.svg)
+
 ## Investigation
 
 The landing page described a recently changed cache configuration and advised readers to follow canonical metadata when opening reply threads. The application also exposed a cache reset route and a verifier route, which made it possible to compare a cold cache with the result after a request.

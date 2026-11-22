@@ -11,6 +11,8 @@ lang: en
 
 The login handler passed JSON values directly into a document-store query. Supplying `$ne` objects instead of strings bypassed authentication. After login, a collection selector on the browse page allowed a regular account to read a collection containing the challenge record.
 
+![NoSQL injection flow from an unvalidated JSON operator to an exposed record.](/assets/writeups/nosql-injection.svg)
+
 ## Clues
 
 The prompt said no credentials had been issued. A development note on the login page stated that the handler accepted JSON and passed the submitted fields into a query. The page also identified the backend as a schema-less document store. Together, these clues suggested testing query operators rather than ordinary username and password strings.

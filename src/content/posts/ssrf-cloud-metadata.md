@@ -11,6 +11,8 @@ lang: en
 
 The URL preview service could make requests to the AWS Instance Metadata Service (IMDS) at `169.254.169.254` and returned the response body. That allowed an attacker to enumerate the instance role and read its credentials response. The challenge placed its answer in that response; credential values are not reproduced here.
 
+![SSRF flow showing a URL preview reaching cloud metadata and returning a role response.](/assets/writeups/ssrf-metadata.svg)
+
 ## Distinguishing a real fetch from demo output
 
 Many public, private, and loopback URLs returned the same generic “demo mode” page. That response was not evidence that the service had fetched the requested destination.

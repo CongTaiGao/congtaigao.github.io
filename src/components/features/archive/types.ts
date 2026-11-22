@@ -19,6 +19,6 @@ export interface Post {
 }
 
 export interface Group {
-	year: number;
+	category: string;
 	posts: Post[];
 }

@@ -149,7 +149,16 @@ export const siteConfig: SiteConfig = {
 		homeText: {
 			enable: true,
 			title: "Po",
-			subtitle: "Security write-ups, projects, and tools",
+			subtitle: [
+				"My portfolio, write-ups and projects",
+				"人工知能（AI）は今や頼もしい支援役ですが、安全に活用するための適切な扱い方は大きな課題です。",
+			],
+			typewriter: {
+				enable: true,
+				speed: 75,
+				deleteSpeed: 35,
+				pauseTime: 2400,
+			},
 			switchable: false,
 		},
 

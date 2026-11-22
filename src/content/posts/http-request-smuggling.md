@@ -11,6 +11,8 @@ lang: en
 
 The reverse proxy and backend disagreed about how to find the end of an HTTP/1.1 request. The proxy used `Content-Length`, while the backend used `Transfer-Encoding: chunked`. This CL.TE mismatch let a request to an allowed route carry a second, smuggled request to an internal route.
 
+![HTTP request smuggling flow showing a proxy and backend parsing different message boundaries.](/assets/writeups/request-smuggling.svg)
+
 ## Confirming the parser mismatch
 
 The public service exposed `/echo`, which returned the submitted body. A direct request to `/internal/flag` was blocked by the proxy, including when the request carried the challenge's team header.

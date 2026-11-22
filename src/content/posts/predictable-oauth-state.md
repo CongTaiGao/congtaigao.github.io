@@ -11,6 +11,8 @@ lang: en
 
 The application generated OAuth `state` from the current Unix timestamp and a user ID. Its callback accepted a user ID from the query string and did not bind that identity to a login flow initiated by the user's session. Because the state formula was predictable and the administrator ID was exposed in the application source, a valid administrator callback could be forged.
 
+![OAuth state flow showing predictable state and a callback that trusts an unbound identity.](/assets/writeups/oauth-state.svg)
+
 ## Investigation
 
 The challenge exchanged a team session for an application session, then presented a lobby with several selectable identities. The administrator was not available in the lobby. A publicly accessible backup copy of the application source revealed the administrator ID and the state-generation formula:

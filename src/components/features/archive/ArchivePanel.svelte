@@ -1,7 +1,7 @@
 <script lang="ts">
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
-import { formatDateToYYYYMMDD, getPostDateParts } from "@utils/date-utils";
+import { formatDateToYYYYMMDD } from "@utils/date-utils";
 import { comparePublishedDatesDescending } from "@utils/post-date-utils";
 import { onMount } from "svelte";
 import type { ArchivePanelProps, Group, Post } from "./types";
@@ -62,103 +62,128 @@ onMount(async () => {
 
 	const grouped = filteredPosts.reduce(
 		(acc, post) => {
-			const year = getPostDateParts(
-				post.data.published,
-				post.data._publishedDateOnly,
-			).year;
-			if (!acc[year]) {
-				acc[year] = [];
+			const category = post.data.category?.trim() || "Uncategorized";
+			if (!acc[category]) {
+				acc[category] = [];
 			}
-			acc[year].push(post);
+			acc[category].push(post);
 			return acc;
 		},
-		{} as Record<number, Post[]>,
+		{} as Record<string, Post[]>,
 	);
 
-	const groupedPostsArray = Object.keys(grouped).map((yearStr) => ({
-		year: Number.parseInt(yearStr, 10),
-		posts: grouped[Number.parseInt(yearStr, 10)],
-	}));
-
-	groupedPostsArray.sort((a, b) => b.year - a.year);
-
-	groups = groupedPostsArray;
+	groups = Object.entries(grouped)
+		.map(([category, posts]) => ({ category, posts }))
+		.sort(
+			(a, b) =>
+				b.posts.length - a.posts.length ||
+				a.category.localeCompare(b.category),
+		);
 });
 </script>
 
-<div class="card-base px-8 py-6">
-	{#each groups as group (group.year)}
-		<div>
-			<div class="flex flex-row w-full items-center h-15">
-				<div
-					class="w-[15%] md:w-[10%] transition text-2xl font-bold text-right text-75"
-				>
-					{group.year}
-				</div>
-				<div class="w-[15%] md:w-[10%]">
-					<div
-						class="h-3 w-3 bg-none rounded-full outline outline-(--primary) mx-auto
-                  -outline-offset-2 z-50"
-					></div>
-				</div>
-				<div class="w-[70%] md:w-[80%] transition text-left text-50">
+<div class="card-base space-y-3 p-4 md:p-6">
+	{#each groups as group (group.category)}
+		<details class="archive-category" open={groups.length === 1}>
+			<summary class="archive-category-summary">
+				<span class="archive-category-name">{group.category}</span>
+				<span class="archive-category-count">
 					{group.posts.length}
 					{i18n(
 						group.posts.length === 1
 							? I18nKey.postCount
 							: I18nKey.postsCount,
 					)}
-				</div>
-			</div>
+				</span>
+				<svg class="archive-category-chevron" viewBox="0 0 24 24" aria-hidden="true">
+					<path d="m9 18 6-6-6-6" />
+				</svg>
+			</summary>
 
-			{#each group.posts as post (post.id)}
-				<a
-					href={post.url || `/posts/${post.id}/`}
-					aria-label={post.data.title}
-					class="group btn-plain block! h-10 w-full rounded-lg hover:text-[initial]"
-				>
-					<div
-						class="flex flex-row justify-start items-center h-full"
+			<div class="archive-category-posts">
+				{#each group.posts as post (post.id)}
+					<a
+						href={post.url || `/posts/${post.id}/`}
+						aria-label={post.data.title}
+						class="group btn-plain block! h-10 w-full rounded-lg hover:text-[initial]"
 					>
-						<!-- date -->
-						<div
-							class="w-[15%] md:w-[10%] transition text-sm text-right text-50"
-						>
-							{formatDate(post.data.published, post.data._publishedDateOnly)}
+						<div class="flex h-full flex-row items-center justify-start">
+							<div class="w-[15%] text-right text-sm text-50 md:w-[10%]">
+								{formatDate(post.data.published, post.data._publishedDateOnly)}
+							</div>
+							<div class="dash-line relative flex h-full w-[15%] items-center md:w-[10%]">
+								<div class="z-50 mx-auto h-1 w-1 rounded bg-[oklch(0.5_0.05_var(--hue))] outline-4 outline-(--card-bg) transition-all group-hover:h-5 group-hover:bg-(--primary) group-hover:outline-(--btn-plain-bg-hover) group-active:outline-(--btn-plain-bg-active)"></div>
+							</div>
+							<div class="w-[70%] overflow-hidden text-ellipsis whitespace-nowrap pr-8 text-left font-bold text-75 transition-all group-hover:translate-x-1 group-hover:text-(--primary) md:max-w-[65%] md:w-[65%]">
+								{post.data.title}
+							</div>
+							<div class="hidden overflow-hidden text-ellipsis whitespace-nowrap text-left text-sm text-30 transition md:block md:w-[15%]">
+								{formatTag(post.data.tags)}
+							</div>
 						</div>
-
-						<!-- dot and line -->
-						<div
-							class="w-[15%] md:w-[10%] relative dash-line h-full flex items-center"
-						>
-							<div
-								class="transition-all mx-auto w-1 h-1 rounded group-hover:h-5
-                       bg-[oklch(0.5_0.05_var(--hue))] group-hover:bg-(--primary) outline-4 z-50
-                       outline-(--card-bg)
-                       group-hover:outline-(--btn-plain-bg-hover)
-                       group-active:outline-(--btn-plain-bg-active)"
-							></div>
-						</div>
-
-						<!-- post title -->
-						<div
-							class="w-[70%] md:max-w-[65%] md:w-[65%] text-left font-bold
-                     group-hover:translate-x-1 transition-all group-hover:text-(--primary)
-                     text-75 pr-8 whitespace-nowrap text-ellipsis overflow-hidden"
-						>
-							{post.data.title}
-						</div>
-
-						<!-- tag list -->
-						<div
-							class="hidden md:block md:w-[15%] text-left text-sm transition
-                     whitespace-nowrap text-ellipsis overflow-hidden text-30"
-						>
-							{formatTag(post.data.tags)}
-						</div>
-					</div>
-				</a>
-			{/each}
-		</div>
+					</a>
+				{/each}
+			</div>
+		</details>
 	{/each}
 </div>
+
+<style>
+	.archive-category {
+		border: 1px solid var(--line-divider);
+		border-radius: 1rem;
+		overflow: hidden;
+	}
+
+	.archive-category-summary {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		gap: 0.75rem;
+		list-style: none;
+		min-height: 3.5rem;
+		padding: 0.75rem 1rem;
+	}
+
+	.archive-category-summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.archive-category-summary:hover {
+		background: var(--btn-plain-bg-hover);
+	}
+
+	.archive-category-name {
+		color: var(--btn-content);
+		flex: 1;
+		font-size: 1rem;
+		font-weight: 700;
+	}
+
+	.archive-category-count {
+		color: var(--btn-content);
+		font-size: 0.875rem;
+		opacity: 0.65;
+	}
+
+	.archive-category-chevron {
+		fill: none;
+		height: 1.1rem;
+		stroke: var(--primary);
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 2;
+		transform: rotate(0deg);
+		transition: transform 180ms ease;
+		width: 1.1rem;
+	}
+
+	.archive-category[open] .archive-category-chevron {
+		transform: rotate(90deg);
+	}
+
+	.archive-category-posts {
+		border-top: 1px solid var(--line-divider);
+		padding: 0.4rem 0.75rem 0.75rem;
+	}
+</style>

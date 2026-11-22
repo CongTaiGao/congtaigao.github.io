@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 390" role="img">
+<title>SSRF to Cloud Metadata</title>
+<desc>A URL preview service reaches a protected metadata endpoint.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7faff"/><stop offset="1" stop-color="#eaf2ff"/></linearGradient></defs>
+<rect width="1200" height="390" rx="28" fill="url(#bg)"/>
+<circle cx="1122" cy="70" r="86" fill="#dceaff" opacity=".62"/>
+<circle cx="1090" cy="42" r="36" fill="#c8e0ff" opacity=".62"/>
+<text x="58" y="45" fill="#3579d5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">SECURITY WRITE-UP</text>
+<text x="58" y="88" fill="#15233b" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" font-weight="750">SSRF to Cloud Metadata</text>
+<text x="58" y="119" fill="#586a84" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">A URL preview service reaches a protected metadata endpoint.</text>
+<rect x="125" y="154" width="278" height="152" rx="18" fill="#ffffff" stroke="#d5e2f3" stroke-width="2"/>
+<circle cx="156" cy="185" r="15" fill="#347fe3"/>
+<text x="156" y="190" fill="#ffffff" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700">1</text>
+<text x="145" y="222" fill="#192b46" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">Preview request</text>
+<text x="145" y="248" fill="#5a6b84" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">User controls the destination</text>
+<path d="M 407 230 H 452" stroke="#78a9ec" stroke-width="3" stroke-linecap="round"/><path d="M 446 224 L 452 230 L 446 236" fill="none" stroke="#78a9ec" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="461" y="154" width="278" height="152" rx="18" fill="#ffffff" stroke="#d5e2f3" stroke-width="2"/>
+<circle cx="492" cy="185" r="15" fill="#347fe3"/>
+<text x="492" y="190" fill="#ffffff" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700">2</text>
+<text x="481" y="222" fill="#192b46" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">Filter bypass</text>
+<text x="481" y="248" fill="#5a6b84" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Internal endpoint is</text>
+<text x="481" y="269" fill="#5a6b84" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">reachable</text>
+<path d="M 743 230 H 788" stroke="#78a9ec" stroke-width="3" stroke-linecap="round"/><path d="M 782 224 L 788 230 L 782 236" fill="none" stroke="#78a9ec" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="797" y="154" width="278" height="152" rx="18" fill="#ffffff" stroke="#d5e2f3" stroke-width="2"/>
+<circle cx="828" cy="185" r="15" fill="#347fe3"/>
+<text x="828" y="190" fill="#ffffff" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700">3</text>
+<text x="817" y="222" fill="#192b46" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">Role response</text>
+<text x="817" y="248" fill="#5a6b84" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Metadata reveals the instance</text>
+<text x="817" y="269" fill="#5a6b84" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">role</text>
+<rect x="58" y="335" width="1084" height="1" fill="#d4e1f2"/>
+<text x="58" y="362" fill="#6a7c95" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="600" letter-spacing=".5">CORRELATE EVENTS  &#8226;  VERIFY THE SOURCE  &#8226;  MINIMIZE EXPOSED DATA</text>
+</svg>

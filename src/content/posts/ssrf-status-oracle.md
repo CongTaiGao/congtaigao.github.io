@@ -11,6 +11,8 @@ lang: en
 
 The URL preview service blocked familiar loopback names, but did not normalize alternate IPv4 representations before applying its hostname policy. The HTTP client interpreted the integer form of loopback as `127.0.0.1` and reached an internal service. The preview API returned upstream status codes, which acted as an oracle for that service.
 
+![SSRF status oracle flow showing address normalization bypass and observable upstream status.](/assets/writeups/ssrf-status-oracle.svg)
+
 ## Finding the oracle
 
 The preview endpoint accepted a URL and performed a HEAD-style fetch. It hid the upstream response body but returned the upstream status. The challenge described a local service on port `9001` with an endpoint that returned different statuses depending on whether a supplied guess matched the beginning of a team-specific value.

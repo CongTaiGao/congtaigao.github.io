@@ -11,6 +11,8 @@ lang: en
 
 The direct `user(id)` resolver restricted callers to their own account, but the `me → team → members` relationship returned other team members. The nested `privateNotes` field did not enforce its own authorization check, so the relationship exposed data that the direct lookup was meant to protect.
 
+![GraphQL authorization flow comparing protected direct access with an unchecked nested field.](/assets/writeups/graphql-authorization.svg)
+
 ## Discovering the schema
 
 The signed-in page linked to a GraphQL endpoint and had introspection enabled. Exploring the schema revealed:
