@@ -248,7 +248,7 @@ export const en: Translation = {
 
 	// Skills Page
 	[Key.skills]: "Skills",
-	[Key.skillsSubtitle]: "My technical skills and expertise",
+	[Key.skillsSubtitle]: "Tools and technologies I use for security research and development.",
 	[Key.skillsFrontend]: "Frontend Development",
 	[Key.skillsBackend]: "Backend Development",
 	[Key.skillsDatabase]: "Database",
@@ -276,7 +276,7 @@ export const en: Translation = {
 
 	// AI Tools (About page)
 	[Key.aiTools]: "AI Tools",
-	[Key.aiToolsSubtitle]: "Tools for writing, development, and research",
+	[Key.aiToolsSubtitle]: "AI assistants for study, research, and development",
 	[Key.aiToolsCategoryChat]: "Chat Assistants",
 	[Key.aiToolsCategoryCoding]: "Coding",
 	[Key.aiToolsCategoryImage]: "Image",

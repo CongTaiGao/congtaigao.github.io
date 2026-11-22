@@ -1,16 +1,18 @@
 # About Po
 
-I’m Po. I’m interested in how software works and how to document what I learn along the way.
+I'm Po, and my real name is Cao Thong Thai. I'm a final-year student in Computer Networks and Data Communications at Ton Duc Thang University.
 
-## What I explore
+## Security Focus
 
-- **Reverse engineering** — understanding program behavior by reading binaries and comparing builds.
-- **Digital forensics** — inspecting file formats, metadata, and other evidence.
-- **Software development** — building projects that help me understand how systems fit together.
+I am pursuing a path in cybersecurity, with web security as my primary focus. I enjoy understanding how web applications work, finding vulnerabilities, and documenting practical lessons from security challenges.
 
-## Find my work
+## Learning and Activities
 
-Browse my [write-ups](/archive/) and [projects](/projects/), or find my public repositories on [GitHub](https://github.com/CongTaiGao).
+I practice through TryHackMe, Hack The Box (HTB) CTFs, and a range of other CTF challenges. These activities help me build hands-on experience with web application testing, Linux, and scripting.
+
+## Find My Work
+
+Browse my [write-ups](/archive/) and [projects](/projects/), or visit my [GitHub profile](https://github.com/CongTaiGao). You can also reach me at [caothongthai1963@gmail.com](mailto:caothongthai1963@gmail.com).
 
 :::github{repo="CongTaiGao/minicloud-simulation"}
 :::

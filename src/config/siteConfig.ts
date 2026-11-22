@@ -6,7 +6,7 @@ const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
 	title: "Po",
-	subtitle: "Security & Development",
+	subtitle: "Portfolio",
 	siteURL: "https://congtaigao.github.io/", // 请替换为你的站点URL，以斜杠结尾
 	siteStartDate: "2026-11-22", // 站点开始运行日期，用于站点统计组件计算运行天数
 	timeZone: "Asia/Ho_Chi_Minh", // 文章日期使用的 IANA 时区，可改为 Asia/Tokyo、Europe/Berlin 等
@@ -24,7 +24,7 @@ export const siteConfig: SiteConfig = {
 		diary: false, // 日记页面开关
 		friends: false, // 友链页面开关
 		projects: true, // 项目页面开关
-		skills: false, // 技能页面开关
+		skills: true, // 技能页面开关
 		timeline: false, // 时间线页面开关
 		albums: false, // 相册页面开关
 		devices: false, // 设备页面开关
@@ -174,7 +174,7 @@ export const siteConfig: SiteConfig = {
 	},
 	showCoverInContent: true, // 在文章内容页显示文章封面
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
-	favicon: [{ src: "/assets/po/mark.png", sizes: "64x64" }],
+	favicon: [{ src: "/assets/po/favicon.png", sizes: "128x128" }],
 
 	showLastModified: false, // 控制"上次编辑"卡片显示的开关
 	pageProgressBar: {

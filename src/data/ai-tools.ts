@@ -37,30 +37,36 @@ export interface AITool {
 
 export const aiToolsData: AITool[] = [
 	{
-		id: "chatgpt",
-		name: "ChatGPT",
-		description: { en: "Outline write-ups, explain concepts, and draft small examples." },
+		id: "chatgpt-codex",
+		name: "ChatGPT/Codex",
+		description: {
+			en: "AI assistance for coding, debugging, research, and development workflows.",
+		},
 		icon: "material-symbols:smart-toy",
-		category: "chat",
+		category: "coding",
 		url: "https://chatgpt.com/",
-		tags: ["Writing", "Learning"],
+		tags: ["Coding", "Research"],
+	},
+	{
+		id: "gemini",
+		name: "Gemini",
+		description: {
+			en: "An AI assistant for learning, research, and exploring technical ideas.",
+		},
+		icon: "material-symbols:auto-awesome",
+		category: "chat",
+		url: "https://gemini.google.com/",
+		tags: ["Learning", "Research"],
 	},
 	{
 		id: "claude",
 		name: "Claude",
-		description: { en: "Review technical drafts and work through long notes." },
-		icon: "material-symbols:code",
-		category: "writing",
+		description: {
+			en: "An AI assistant for working through technical material and drafting clear explanations.",
+		},
+		icon: "material-symbols:forum-outline",
+		category: "chat",
 		url: "https://claude.ai/",
-		tags: ["Review", "Documentation"],
-	},
-	{
-		id: "perplexity",
-		name: "Perplexity",
-		description: { en: "Find source material and follow references during research." },
-		icon: "material-symbols:search",
-		category: "search",
-		url: "https://www.perplexity.ai/",
-		tags: ["Research", "Sources"],
+		tags: ["Reading", "Writing"],
 	},
 ];

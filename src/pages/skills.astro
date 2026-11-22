@@ -16,35 +16,22 @@ if (!siteConfig.featurePages.skills) {
 
 const categories = [...new Set(skillsData.map((skill) => skill.category))];
 
-const getCategoryText = (category: string) => {
-	switch (category) {
-		case "frontend":
-			return i18n(I18nKey.skillsFrontend);
-		case "backend":
-			return i18n(I18nKey.skillsBackend);
-		case "database":
-			return i18n(I18nKey.skillsDatabase);
-		case "tools":
-			return i18n(I18nKey.skillsTools);
-		case "other":
-			return i18n(I18nKey.skillsOther);
-		default:
-			return category;
-	}
-};
+const getCategoryText = (category: string) => category;
 
 const getCategoryIcon = (category: string) => {
 	switch (category) {
-		case "frontend":
-			return "material-symbols:web";
-		case "backend":
-			return "material-symbols:dns";
-		case "database":
-			return "material-symbols:storage";
-		case "tools":
-			return "material-symbols:build";
-		case "other":
-			return "material-symbols:widgets";
+		case "Security":
+			return "material-symbols:shield-lock";
+		case "Systems":
+			return "material-symbols:terminal";
+		case "Version Control":
+			return "material-symbols:account-tree";
+		case "Containers":
+			return "material-symbols:deployed-code";
+		case "Programming":
+			return "material-symbols:code";
+		case "Development":
+			return "material-symbols:code-blocks";
 		default:
 			return "material-symbols:category";
 	}

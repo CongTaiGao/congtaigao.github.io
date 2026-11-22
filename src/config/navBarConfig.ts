@@ -6,6 +6,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		LinkPreset.Projects,
+		LinkPreset.Skills,
 		LinkPreset.AITools,
 	],
 };
