@@ -19,6 +19,8 @@ The landing page described a recently changed cache configuration and advised re
 
 After signing in with a current challenge session, the verifier showed the expected cold-cache state. A normal request to the home page returned a canonical URL for the challenge host. This established a baseline before testing how forwarded host information affected the response.
 
+![Challenge home page showing the cache and canonical URL clues.](/assets/writeups/screenshots/cache-context.png)
+
 ## Reproduction
 
 Use a fresh challenge session and reset the cache before each attempt. Keep the session cookie in a local environment variable; never paste its value into a public write-up.

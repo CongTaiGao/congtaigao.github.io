@@ -17,6 +17,8 @@ The login handler passed JSON values directly into a document-store query. Suppl
 
 The prompt said no credentials had been issued. A development note on the login page stated that the handler accepted JSON and passed the submitted fields into a query. The page also identified the backend as a schema-less document store. Together, these clues suggested testing query operators rather than ordinary username and password strings.
 
+![Screenshot of the challenge application's empty sign-in form.](/assets/writeups/screenshots/nosql-login-screen.png)
+
 ## Authentication bypass
 
 Submitting the following JSON to the login route created an application session:
@@ -29,6 +31,8 @@ Submitting the following JSON to the login route created an application session:
 ```
 
 The handler treated the objects as query operators. It returned a successful login instead of comparing the supplied values as literal strings.
+
+![HTTP exchange showing the JSON login bypass succeed.](/assets/writeups/screenshots/nosql-auth-bypass.png)
 
 ## Reading the challenge record
 

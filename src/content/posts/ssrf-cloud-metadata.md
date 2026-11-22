@@ -23,6 +23,8 @@ Requests to the link-local metadata address behaved differently: ordinary metada
 
 The preview endpoint returned HTTP 200 and a role name for:
 
+![Metadata response listing the instance role.](/assets/writeups/screenshots/cloud-role-response.png)
+
 ```text
 http://169.254.169.254/latest/meta-data/iam/security-credentials/
 ```

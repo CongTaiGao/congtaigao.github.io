@@ -17,6 +17,8 @@ The application issued an RS256-signed session JWT with a low-privilege role. It
 
 The challenge portal provided a short-lived team session exchange and a public register containing a JWKS endpoint and a PEM representation of the RSA public key. A valid session opened the application as a medium-privilege user. The transcript endpoint returned a restricted response for that role and indicated that a higher role was required.
 
+![Public JWKS entry showing the key type and signing algorithm.](/assets/writeups/screenshots/jwt-public-key.png)
+
 The issued JWT header selected RS256 and identified the key with a `kid` value. Its payload contained the team, role, and time claims. The public key's modulus and exponent matched the JWKS entry.
 
 ## Exploitation

@@ -17,6 +17,8 @@ The direct `user(id)` resolver restricted callers to their own account, but the 
 
 The signed-in page linked to a GraphQL endpoint and had introspection enabled. Exploring the schema revealed:
 
+![GraphQL schema view showing the team and member relationship.](/assets/writeups/screenshots/graphql-team-schema.png)
+
 - `Query.user(id: ID!)` was documented as self-only.
 - `User` included a sensitive `privateNotes` field.
 - `Team.members` returned user objects for the caller's team.

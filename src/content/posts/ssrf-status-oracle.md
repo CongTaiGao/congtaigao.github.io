@@ -17,11 +17,15 @@ The URL preview service blocked familiar loopback names, but did not normalize a
 
 The preview endpoint accepted a URL and performed a HEAD-style fetch. It hid the upstream response body but returned the upstream status. The challenge described a local service on port `9001` with an endpoint that returned different statuses depending on whether a supplied guess matched the beginning of a team-specific value.
 
+![Screenshot of the URL preview service returning a successful upstream status.](/assets/writeups/screenshots/ssrf-preview-result.png)
+
 Ordinary loopback forms such as `127.0.0.1` and `localhost` were rejected. However, the unsigned integer representation of `127.0.0.1` is `2130706433`.
 
 ## Bypassing the hostname check
 
 Sending the preview service to `http://2130706433:9001/` produced an upstream success response. This showed that the policy checked the text form of the hostname while the HTTP client later canonicalized it to loopback.
+
+![URL preview accepting the alternate numeric representation of loopback.](/assets/writeups/screenshots/ssrf-address-normalization.png)
 
 The same route could reach the internal check endpoint. A correct prefix produced HTTP 200, an incorrect prefix produced HTTP 404, and an empty guess produced HTTP 400. Trying hexadecimal characters one position at a time allowed the challenge value to be reconstructed from status codes alone.
 

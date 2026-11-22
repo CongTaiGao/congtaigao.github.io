@@ -17,6 +17,8 @@ This lab investigation reconstructed an intrusion that began with a malicious up
 
 I began with the security case and used its asset context to pivot into SIEM Search. Proxy events around the download exposed both a referring site and a payload host. These values serve different roles, so I treated the referrer field separately from the destination that supplied the payload.
 
+![Endpoint entity overview from the security investigation.](/assets/writeups/screenshots/endpoint-investigation.png)
+
 For process injection, I filtered `PROCESS_MODULE_LOAD` events around the suspicious activity and inspected the target process fields. The event contained both a source process and a target process; distinguishing their identifiers avoided reporting the injector's process ID as the hollowed process.
 
 I then searched Windows Security events for Kerberos service-ticket activity and read the service principal name from the event fields. From that service, I followed process and logon activity on the file server, then checked `FILE_CREATION` events for the archive created during the same sequence.

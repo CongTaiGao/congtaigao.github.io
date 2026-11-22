@@ -19,6 +19,8 @@ The diagram summarizes the sequence without publishing hostnames, account names,
 
 I started with the developer endpoint's network events and looked for the AI API request. From that event, I pivoted backward to the extension download and process launch. This connected the otherwise ordinary API traffic to a newly installed extension rather than treating the destination alone as proof of compromise.
 
+![Google SecOps raw event showing the AI service request.](/assets/writeups/screenshots/google-ai-request.png)
+
 Next, I reviewed process creation and file events around the same activity. The compiler command line identified a newly created executable, while a later process event showed local cloud configuration being read. I then compared the subsequent outbound connections with that credential-access timeline.
 
 Finally, I pivoted to the service identity and CI host. A file-creation event showed a script being replaced after the workstation activity. The ordered sequence tied endpoint compromise to a change on a separate runner.

@@ -17,6 +17,8 @@ This investigation connected a cloud-account takeover to activity across identit
 
 I used threat-intelligence reporting as a starting point, then validated each step in SIEM Search. Network and identity events established the suspicious sign-in and MFA change. I correlated those events with `EMAIL_TRANSACTION` and `USER_RESOURCE_ACCESS` records to check whether an unfamiliar OAuth application had access to the mailbox.
 
+![Google SecOps network-event view from the phishing investigation.](/assets/writeups/screenshots/oauth-network-event.png)
+
 For the data-access phase, I searched Workspace audit events for a Drive `item_download` action. I then pivoted to process events on the database system, looking for the export operation and the archive step. Finally, I compared the resulting file activity with `NETWORK_HTTP` events to confirm that an upload followed the local staging activity.
 
 ## Findings

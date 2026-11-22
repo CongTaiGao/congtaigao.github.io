@@ -25,6 +25,8 @@ Replacing the smuggled `GET /` with `GET /internal/flag` reached the backend rou
 
 When constructing the request, `Content-Length` must equal the byte length of the entire body, including the chunk terminator and the embedded request. Recalculate it whenever the embedded request changes.
 
+![Raw response showing the smuggled request reaching the internal route.](/assets/writeups/screenshots/request-smuggling-result.png)
+
 ## Root cause and remediation
 
 The proxy authorized the outer request path, while the backend interpreted additional request bytes as a new request. Ensure every HTTP hop uses consistent message framing, reject requests containing conflicting `Content-Length` and `Transfer-Encoding` headers, and close connections after ambiguous framing errors.
