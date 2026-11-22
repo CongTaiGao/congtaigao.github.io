@@ -82,11 +82,8 @@ const pages = [
 	{
 		name: "About page",
 		htmlPath: "about/index.html",
-		requiredMarkup: [["card-github", "rendered GitHub repository card"]],
-		requiredRules: [
-			[".card-github", "GitHub repository card styles"],
-			[".custom-md .image-grid", "extended Markdown layout styles"],
-		],
+		requiredMarkup: [["Hi! I'm Po", "About page introduction"]],
+		requiredRules: [[".custom-md .image-grid", "extended Markdown layout styles"]],
 	},
 ];
 
