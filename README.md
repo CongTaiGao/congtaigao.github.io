@@ -14,6 +14,10 @@ pnpm dev
 Run `pnpm build` to produce the static site in `dist/` and `pnpm preview` to serve it locally.
 If the site is already built, you can also serve it with `python -m http.server 4321 --directory dist`.
 
+## Deploy to GitHub Pages
+
+Set the repository's GitHub Pages source to **GitHub Actions** in Settings → Pages. Push to `main` to build and deploy the site. The deployment workflow is `.github/workflows/deploy.yml`.
+
 ## Update the portfolio
 
 - Add posts to `src/content/posts/`.
