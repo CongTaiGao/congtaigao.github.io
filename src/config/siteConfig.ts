@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 255, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		hue: 220, // Default hue for the cobalt-blue theme
 		fixed: true, // 对访问者隐藏主题色选择器
 	},
 
@@ -82,7 +82,7 @@ export const siteConfig: SiteConfig = {
 	postListLayout: {
 		// 默认布局模式："list" 列表模式（单列布局），"grid" 网格模式（双列布局）
 		// 注意：如果侧边栏配置启用了"both"双侧边栏，则无法使用文章列表"grid"网格（双列）布局
-		defaultMode: "list",
+		defaultMode: "grid",
 		// 是否启用布局切换功能
 		enable: true,
 		// 是否允许用户切换布局
@@ -148,10 +148,11 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true,
-			title: "Po",
+			title: "> Po's blog",
 			subtitle: [
-				"My portfolio, write-ups and projects",
+				"My write-ups and projects",
 				"人工知能は頼れる支援役ですが、安全な活用は依然として課題です。",
+				"80 79 123 68 51 99 95 116 48 95 52 115 99 125",
 			],
 			typewriter: {
 				enable: true,
