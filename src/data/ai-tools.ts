@@ -1,6 +1,8 @@
 export type AIToolCategory =
 	| "chat"
 	| "coding"
+	| "mcp"
+	| "local"
 	| "image"
 	| "audio"
 	| "video"
@@ -68,5 +70,27 @@ export const aiToolsData: AITool[] = [
 		category: "chat",
 		url: "https://claude.ai/",
 		tags: ["Reading", "Writing"],
+	},
+	{
+		id: "burp-suite-mcp",
+		name: "Burp Suite MCP",
+		description: {
+			en: "Connects AI clients to Burp Suite to help review captured HTTP traffic.",
+		},
+		icon: "material-symbols:cable",
+		category: "mcp",
+		url: "https://portswigger.net/burp/documentation/desktop/tools/proxy/http-history",
+		tags: ["Model Context Protocol", "HTTP Traffic"],
+	},
+	{
+		id: "qwen-local",
+		name: "Qwen",
+		description: {
+			en: "Run Qwen models locally to summarize notes and explore technical questions.",
+		},
+		icon: "material-symbols:memory",
+		category: "local",
+		url: "https://huggingface.co/Qwen",
+		tags: ["Experimental", "Research"],
 	},
 ];

@@ -4,8 +4,15 @@ published: 2026-11-13
 description: "Nested GraphQL resolvers exposed a restricted account and a private field through a team relationship."
 category: Web
 tags: [Web Security, GraphQL, Authorization]
+image: "/assets/writeups/poctf/the-shape-of-a-query.png"
 lang: en
 ---
+## Challenge Brief
+
+![The poCTF 2026 website and CTF visual theme.](/assets/writeups/poctf/poctf-2026-theme.png)
+
+![The original challenge brief for The Shape of a Query.](/assets/writeups/poctf/the-shape-of-a-query.png)
+
 
 ## Summary
 

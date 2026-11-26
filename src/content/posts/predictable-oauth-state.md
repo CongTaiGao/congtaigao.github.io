@@ -4,8 +4,15 @@ published: 2026-11-16
 description: "A timestamp-derived OAuth state and an unbound user identifier allowed an administrator callback to be forged."
 category: Web
 tags: [Web Security, OAuth, Authentication]
+image: "/assets/writeups/poctf/the-state-of-trust.png"
 lang: en
 ---
+## Challenge Brief
+
+![The poCTF 2026 website and CTF visual theme.](/assets/writeups/poctf/poctf-2026-theme.png)
+
+![The original challenge brief for The State of Trust.](/assets/writeups/poctf/the-state-of-trust.png)
+
 
 ## Summary
 

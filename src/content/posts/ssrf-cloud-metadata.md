@@ -4,8 +4,15 @@ published: 2026-11-13
 description: "A URL preview endpoint reached the cloud metadata service and exposed the challenge's answer in its response."
 category: Web
 tags: [Web Security, SSRF, Cloud Security]
+image: "/assets/writeups/poctf/the-interior-route.png"
 lang: en
 ---
+## Challenge Brief
+
+![The poCTF 2026 website and CTF visual theme.](/assets/writeups/poctf/poctf-2026-theme.png)
+
+![The original challenge brief for The Interior Route.](/assets/writeups/poctf/the-interior-route.png)
+
 
 ## Summary
 

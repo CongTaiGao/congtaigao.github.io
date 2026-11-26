@@ -4,8 +4,15 @@ published: 2026-11-13
 description: "An alternate IPv4 representation bypassed a hostname filter and exposed an internal status oracle."
 category: Web
 tags: [Web Security, SSRF, Input Validation]
+image: "/assets/writeups/poctf/the-logic-inside.png"
 lang: en
 ---
+## Challenge Brief
+
+![The poCTF 2026 website and CTF visual theme.](/assets/writeups/poctf/poctf-2026-theme.png)
+
+![The original challenge brief for The Logic Inside.](/assets/writeups/poctf/the-logic-inside.png)
+
 
 ## Summary
 

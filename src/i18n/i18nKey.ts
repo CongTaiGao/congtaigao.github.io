@@ -188,6 +188,8 @@ enum I18nKey {
 	aiToolsSubtitle = "aiToolsSubtitle",
 	aiToolsCategoryChat = "aiToolsCategoryChat",
 	aiToolsCategoryCoding = "aiToolsCategoryCoding",
+	aiToolsCategoryMcp = "aiToolsCategoryMcp",
+	aiToolsCategoryLocal = "aiToolsCategoryLocal",
 	aiToolsCategoryImage = "aiToolsCategoryImage",
 	aiToolsCategoryAudio = "aiToolsCategoryAudio",
 	aiToolsCategoryVideo = "aiToolsCategoryVideo",

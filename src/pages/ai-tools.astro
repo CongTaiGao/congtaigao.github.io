@@ -22,6 +22,10 @@ const getCategoryText = (category: string) => {
 			return i18n(I18nKey.aiToolsCategoryChat);
 		case "coding":
 			return i18n(I18nKey.aiToolsCategoryCoding);
+		case "mcp":
+			return i18n(I18nKey.aiToolsCategoryMcp);
+		case "local":
+			return i18n(I18nKey.aiToolsCategoryLocal);
 		case "image":
 			return i18n(I18nKey.aiToolsCategoryImage);
 		case "audio":
@@ -45,6 +49,10 @@ const getCategoryIcon = (category: string) => {
 			return "material-symbols:forum-outline";
 		case "coding":
 			return "material-symbols:code";
+		case "mcp":
+			return "material-symbols:cable";
+		case "local":
+			return "material-symbols:memory";
 		case "image":
 			return "material-symbols:image-outline";
 		case "audio":

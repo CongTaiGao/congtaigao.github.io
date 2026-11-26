@@ -4,8 +4,15 @@ published: 2026-11-13
 description: "A JWT verifier accepted an HMAC signature made with its public RSA key and trusted a forged role claim."
 category: Web
 tags: [Web Security, JWT, Authentication]
+image: "/assets/writeups/poctf/the-apparatus-levitation.png"
 lang: en
 ---
+## Challenge Brief
+
+![The poCTF 2026 website and CTF visual theme.](/assets/writeups/poctf/poctf-2026-theme.png)
+
+![The original challenge brief for The Apparatus, Levitation.](/assets/writeups/poctf/the-apparatus-levitation.png)
+
 
 ## Summary
 

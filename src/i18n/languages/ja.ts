@@ -282,6 +282,8 @@ export const ja: Translation = {
 		"日常のワークフローで使用している AI アシスタントとサービス",
 	[Key.aiToolsCategoryChat]: "チャットアシスタント",
 	[Key.aiToolsCategoryCoding]: "コーディング",
+	[Key.aiToolsCategoryMcp]: "MCP 連携",
+	[Key.aiToolsCategoryLocal]: "ローカル AI",
 	[Key.aiToolsCategoryImage]: "画像生成",
 	[Key.aiToolsCategoryAudio]: "音声",
 	[Key.aiToolsCategoryVideo]: "動画",

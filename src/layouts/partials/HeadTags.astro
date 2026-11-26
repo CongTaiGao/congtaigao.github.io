@@ -117,6 +117,15 @@ const favicons: Favicon[] =
 		},
 	}}
 >
+	// Apply the updated dark/list defaults once, then respect later visitor choices.
+	const UI_DEFAULTS_VERSION = "po-dark-list-v1";
+	if (localStorage.getItem("uiDefaultsVersion") !== UI_DEFAULTS_VERSION) {
+		localStorage.setItem("theme", DEFAULT_THEME);
+		localStorage.removeItem("postListLayout");
+		sessionStorage.removeItem("postListLayout");
+		localStorage.setItem("uiDefaultsVersion", UI_DEFAULTS_VERSION);
+	}
+
 	// Load the theme from local storage
 	const theme = localStorage.getItem("theme") || DEFAULT_THEME;
 	let isDark = false;

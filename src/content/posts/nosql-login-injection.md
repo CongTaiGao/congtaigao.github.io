@@ -4,8 +4,15 @@ published: 2026-11-13
 description: "JSON operators bypassed a document-store login and an unrestricted collection selector exposed challenge data."
 category: Web
 tags: [Web Security, NoSQL, Authentication]
+image: "/assets/writeups/poctf/no-structure-required.png"
 lang: en
 ---
+## Challenge Brief
+
+![The poCTF 2026 website and CTF visual theme.](/assets/writeups/poctf/poctf-2026-theme.png)
+
+![The original challenge brief for No Structure Required.](/assets/writeups/poctf/no-structure-required.png)
+
 
 ## Summary
 

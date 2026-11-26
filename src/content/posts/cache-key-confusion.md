@@ -4,8 +4,15 @@ published: 2026-11-08
 description: "A cache key that ignored a request header let an attacker poison canonical metadata for later visitors."
 category: Web
 tags: [Web Security, Cache Poisoning, HTTP]
+image: "/assets/writeups/poctf/the-poisoned-well.png"
 lang: en
 ---
+## Challenge Brief
+
+![The poCTF 2026 website and CTF visual theme.](/assets/writeups/poctf/poctf-2026-theme.png)
+
+![The original challenge brief for The Poisoned Well.](/assets/writeups/poctf/the-poisoned-well.png)
+
 
 ## Summary
 

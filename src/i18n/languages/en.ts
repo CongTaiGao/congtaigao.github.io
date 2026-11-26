@@ -276,9 +276,11 @@ export const en: Translation = {
 
 	// AI Tools (About page)
 	[Key.aiTools]: "AI Tools",
-	[Key.aiToolsSubtitle]: "AI assistants for study, research, and development",
+	[Key.aiToolsSubtitle]: "AI assistants, tool integrations, and local models for research and development",
 	[Key.aiToolsCategoryChat]: "Chat Assistants",
 	[Key.aiToolsCategoryCoding]: "Coding",
+	[Key.aiToolsCategoryMcp]: "MCP Integrations",
+	[Key.aiToolsCategoryLocal]: "Local AI",
 	[Key.aiToolsCategoryImage]: "Image",
 	[Key.aiToolsCategoryAudio]: "Audio",
 	[Key.aiToolsCategoryVideo]: "Video",

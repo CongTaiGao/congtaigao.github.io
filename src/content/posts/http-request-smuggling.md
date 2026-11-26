@@ -4,8 +4,15 @@ published: 2026-11-13
 description: "A CL.TE parser mismatch let a request pass the proxy ACL and reach a restricted backend route."
 category: Web
 tags: [Web Security, HTTP, Request Smuggling]
+image: "/assets/writeups/poctf/between-the-lines.png"
 lang: en
 ---
+## Challenge Brief
+
+![The poCTF 2026 website and CTF visual theme.](/assets/writeups/poctf/poctf-2026-theme.png)
+
+![The original challenge brief for Between the Lines.](/assets/writeups/poctf/between-the-lines.png)
+
 
 ## Summary
 

@@ -234,6 +234,8 @@ export const zh_TW: Translation = {
 	[Key.aiToolsSubtitle]: "目前在日常工作流程中常用的 AI 助手與服務",
 	[Key.aiToolsCategoryChat]: "對話助手",
 	[Key.aiToolsCategoryCoding]: "編碼協作",
+	[Key.aiToolsCategoryMcp]: "MCP 整合",
+	[Key.aiToolsCategoryLocal]: "本機 AI",
 	[Key.aiToolsCategoryImage]: "圖像生成",
 	[Key.aiToolsCategoryAudio]: "音訊",
 	[Key.aiToolsCategoryVideo]: "影片",
